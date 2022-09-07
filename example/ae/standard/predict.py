@@ -10,8 +10,26 @@ import matplotlib.pyplot as plt
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
 from deepke.attribution_extraction.standard.utils import load_pkl, load_csv
 import deepke.attribution_extraction.standard.models as models
+import matplotlib
+
+#设置字体为楷体
+# matplotlib.rcParams['font.sans-serif'] = ['KaiTi']
+import matplotlib.pyplot as plt
+import matplotlib
+print(matplotlib.matplotlib_fname())
+import matplotlib
+print(matplotlib.get_cachedir())
 
 
+matplotlib.rcParams['font.family'] = 'SimHei'
+matplotlib.rcParams['font.size'] = 10
+matplotlib.rcParams['axes.unicode_minus']=False
+
+''' 使用下面语句也可以
+plt.rcParams['font.family'] = 'SimHei'
+plt.rcParams['font.size'] = 10
+plt.rcParams['axes.unicode_minus']=False
+'''
 
 
 logger = logging.getLogger(__name__)
@@ -136,7 +154,7 @@ def main(cfg):
         logger.info(f"\"{data[0]['entity']}\" 和 \"{data[0]['attribute_value']}\" 在句中属性为：\"{prob_att}\"，置信度为{prob:.2f}。")
 
     if cfg.predict_plot:
-        plt.rcParams["font.family"] = 'Arial Unicode MS'
+        plt.rcParams["font.family"] = 'SimHei'
         x = list(rels.keys())
         height = list(y_pred.cpu().numpy())
         plt.bar(x, height)

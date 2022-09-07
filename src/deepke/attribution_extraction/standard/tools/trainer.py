@@ -59,8 +59,8 @@ def train(epoch, model, dataloader, optimizer, criterion, device, writer, cfg):
     if cfg.show_plot and not cfg.only_comparison_plot:
         if cfg.plot_utils == 'matplot':
             plt.plot(losses)
-            plt.title(f'epoch {epoch} train loss')
-            plt.show()
+            plt.title(f'epoch {epoch} train loss_ae')
+            # plt.show()
 
         if cfg.plot_utils == 'tensorboard':
             for i in range(len(losses)):

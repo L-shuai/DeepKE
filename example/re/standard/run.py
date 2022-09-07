@@ -125,12 +125,12 @@ def main(cfg):
                 best_es_path = es_path
 
     if cfg.show_plot:
-        if cfg.plot_utils == 'matplot':
-            plt.plot(train_losses, 'x-')
-            plt.plot(valid_losses, '+-')
-            plt.legend(['train', 'valid'])
-            plt.title('train/valid comparison loss')
-            plt.show()
+        # if cfg.plot_utils == 'matplot':
+        #     plt.plot(train_losses, 'x-')
+        #     plt.plot(valid_losses, '+-')
+        #     plt.legend(['train', 'valid'])
+        #     plt.title('train/valid comparison loss')
+            # plt.show()
 
         if cfg.plot_utils == 'tensorboard':
             for i in range(len(train_losses)):
